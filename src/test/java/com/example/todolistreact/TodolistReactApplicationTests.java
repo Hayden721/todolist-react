@@ -27,9 +27,9 @@ class TodolistReactApplicationTests {
     public void TestConnectDB() {
         try (Connection conn =
                      DriverManager.getConnection(
-                         "jdbc:oracle:thin:@testdb_high?TNS_ADMIN=/Users/byunsang-yong/Desktop/OCI/Wallet_testdb",
+                         "jdbc:oracle:thin:@testdb_high?TNS_ADMIN=/Users/apple/Documents/OCI-Wallet/Wallet_testdb",
                         "ADMIN",
-                        "Tkddyd123123123")) {
+                        "Tkddyd123123")) {
             System.out.println(conn);
         } catch (Exception e) {
             fail(e.getMessage());

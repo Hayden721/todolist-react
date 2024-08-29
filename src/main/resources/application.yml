@@ -3,9 +3,9 @@ spring:
     name: todolist-react
 
   datasource:
-    url: jdbc:oracle:thin:@testdb_high?TNS_ADMIN=/Users/byunsang-yong/Desktop/OCI/Wallet_testdb
+    url: jdbc:oracle:thin:@testdb_high?TNS_ADMIN=/Users/apple/Documents/OCI-Wallet/Wallet_testdb
     username: ADMIN
-    password: Tkddyd123123123
+    password: Tkddyd123123
     driver-class-name: oracle.jdbc.OracleDriver
 
 server:
