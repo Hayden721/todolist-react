@@ -4,8 +4,10 @@ module.exports = function (app) {
     app.use(
         'api',
         createProxyMiddleware({
-            target: 'http://localhost:8080',
+            target: process.env.REACT_APP_CORS_ALLOWED_ORIGINS,
             changeOrigin: true,
         })
     );
+
+
 };
