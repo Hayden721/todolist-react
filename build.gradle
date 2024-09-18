@@ -41,7 +41,7 @@ dependencies {
 
 }
 
-def frontendDir = "$projectDir/src/main/frontend"
+def frontendDir = "$projectDir/src/main/frontend-react"
 
 sourceSets {
     main {
