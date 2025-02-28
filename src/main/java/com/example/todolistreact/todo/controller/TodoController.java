@@ -21,7 +21,7 @@ public class TodoController {
 
     @GetMapping("/todo")
     public ResponseEntity<List<TodoDataDto>> todoGet() {
-        log.info("hello commit");
+
         List<TodoDataDto> todo = todoService.getTodoData();
         log.info("todo : {}", todo);
 
