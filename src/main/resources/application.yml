@@ -1,20 +1,3 @@
 spring:
-  application:
-    name: todolist-react
-
-  datasource:
-    url: jdbc:oracle:thin:@testdb_high?TNS_ADMIN=/Users/apple/Documents/OCI-Wallet/Wallet_testdb
-    username: ADMIN
-    password: Tkddyd123123
-    driver-class-name: oracle.jdbc.OracleDriver
-
-server:
-  port: 8080
-
-
-mybatis:
-  mapper-locations: classpath:/mapper/*Mapper.xml
-  type-aliases-package: com.example.todolistreact.**.dto
-  configuration:
-    map-underscore-to-camel-case: true
-    jdbc-type-for-null: null
+  profiles:
+    active: dev
