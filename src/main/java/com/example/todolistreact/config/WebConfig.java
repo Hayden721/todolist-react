@@ -12,8 +12,6 @@ public class WebConfig implements WebMvcConfigurer {
     @Value("${cors.allowed.origins}")
     private String allowedOrigins;
 
-
-
     @Override
     public void addCorsMappings(CorsRegistry registry){
         registry.addMapping("/**") // cors를 적용할 spring서버의 url 패턴.
