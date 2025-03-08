@@ -27,9 +27,9 @@ class TodolistReactApplicationTests {
     public void TestConnectDB() {
         try (Connection conn =
                      DriverManager.getConnection(
-                         "jdbc:oracle:thin:@(description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1521)(host=adb.ap-chuncheon-1.oraclecloud.com))(connect_data=(service_name=g91c16de698e1a3_testdb_medium.adb.oraclecloud.com))(security=(ssl_server_dn_match=yes)))",
+                         "jdbc:oracle:thin:@(description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.ap-chuncheon-1.oraclecloud.com))(connect_data=(service_name=g91c16de698e1a3_testdb_high.adb.oraclecloud.com))(security=(ssl_server_dn_match=yes)))",
                         "ADMIN",
-                        "Tkddyd123123")) {
+                        "Rhddlsdlswmdtj1!")) {
             System.out.println(conn);
         } catch (Exception e) {
             fail(e.getMessage());

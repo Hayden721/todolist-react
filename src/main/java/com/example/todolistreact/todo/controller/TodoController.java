@@ -5,26 +5,40 @@ import com.example.todolistreact.todo.service.TodoService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api")
-@RequiredArgsConstructor
 @Slf4j
 public class TodoController {
 
     private final TodoService todoService;
 
+    public TodoController(TodoService todoService) {
+        this.todoService = todoService;
+    }
+
     @GetMapping("/todo")
-    public ResponseEntity<List<TodoDataDto>> todoGet() {
-        log.info("test");
-        List<TodoDataDto> todo = todoService.getTodoData();
+    public ResponseEntity<List<TodoDataDto>> todoGet(@RequestParam String user) {
+        log.info("/todo : {}", user);
+        List<TodoDataDto> todo = todoService.getTodoData(user);
         log.info("todo : {}", todo);
 
         return ResponseEntity.ok(todo);
+    }
+
+    @PostMapping("/user-check")
+    public ResponseEntity<Boolean> userCheck(@RequestBody Map<String, String> response) {
+        log.info("responseUserData : {}", response);
+        String username = response.get("usernameValue");
+        log.info("user : {}", username);
+
+        Boolean checkUser = todoService.checkUserDataByUsername(username);
+        log.info("checkUser : {}", checkUser);
+
+    return ResponseEntity.ok(checkUser);
     }
 }

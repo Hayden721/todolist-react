@@ -38,7 +38,7 @@ out/
 
 
 ### React env ###
-src/main/frontend/.env
+/src/main/frontend-react/.env
 
 ### Spring Boot ###
 application-dev.yml
@@ -54,9 +54,9 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
+/src/main/frontend-react/node_modules
+/src/main/frontend-react/dist
+/dist-ssr
 *.local
 
 # Editor directories and files

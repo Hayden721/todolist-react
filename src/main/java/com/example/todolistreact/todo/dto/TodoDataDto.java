@@ -9,8 +9,10 @@ import lombok.*;
 @AllArgsConstructor
 @ToString
 public class TodoDataDto {
-    private int testNo;
-    private String testContent;
-    private String testWriter;
+    private Long todoNo;
+    private String todoContent;
+    private String todoSuccess;
+    private String todoDelete;
+    private Long userNo;
 
 }

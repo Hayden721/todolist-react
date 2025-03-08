@@ -13,9 +13,10 @@ export default {
   plugins: [
     require('daisyui')
   ],
-  daisy: {
-    themes:["light", "dark"],
-    darkMode:"dark"
+  daisyui: {
+    themes: ["light", "dark"],
+    logs: true,
+
   },
 
 

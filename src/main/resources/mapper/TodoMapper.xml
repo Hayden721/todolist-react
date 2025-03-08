@@ -6,7 +6,19 @@
 <mapper namespace="com.example.todolistreact.todo.dao.TodoDao">
 
     <select id="selectTodoData" resultType="com.example.todolistreact.todo.dto.TodoDataDto">
-        select * from test
+        select * from todo_tb
+        where user_no = #{userNo}
     </select>
+
+    <select id="selectUserDataByUsername" parameterType="String" resultType="Boolean">
+        select count(*) from user_tb
+        where user_name = #{username}
+    </select>
+    <select id="selectUserNo" resultType="java.lang.Long">
+        select user_no
+        from user_tb
+        where user_name = #{user}
+    </select>
+
 
 </mapper>

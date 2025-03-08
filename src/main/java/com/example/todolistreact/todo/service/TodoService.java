@@ -5,5 +5,7 @@ import com.example.todolistreact.todo.dto.TodoDataDto;
 import java.util.List;
 
 public interface TodoService {
-    List<TodoDataDto> getTodoData();
+    List<TodoDataDto> getTodoData(String user);
+
+    Boolean checkUserDataByUsername(String username);
 }
