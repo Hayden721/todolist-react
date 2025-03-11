@@ -19,7 +19,7 @@ const Login: React.FC = () => {
             const userCheck = await axios.post('/api/user-check', {usernameValue});
             const checkResult = userCheck.data;
 
-            console.log("유저 있나? : ", userCheck);
+            // console.log("유저 있나? : ", userCheck);
             if(checkResult) {
                 navigate('/todo');
                 dispatch(setUsername(usernameValue));
@@ -32,19 +32,20 @@ const Login: React.FC = () => {
     }
 
     return (
-        <div className={"bg-base-200"}>
+        <div className={"bg-base-200 min-h-screen w-screen"}>
             <div className="navbar">
                 <div className="flex-1">
                 </div>
                 <ThemeModeToggle/>
             </div>
 
-            <div className="hero min-h-screen">
+            <div className={"h-full"}>
+            <div className="hero h-96">
                 <div className="hero-content flex-col">
                     <div className="text-center">
-                        <h1 className="text-5xl font-bold">Todo-List</h1>
+                        <h1 className="text-5xl font-bold">TODO</h1>
                     </div>
-                    <div className="card bg-base-100 min-w-96 max-w-sm shrink-0 shadow-2xl">
+                    <div className="card bg-base-100 max-w-sm shrink-0 shadow-2xl">
                         <form className="card-body" onSubmit={handleSubmit}>
                             <div className="form-control">
                                 <label className="label">
@@ -60,15 +61,17 @@ const Login: React.FC = () => {
                             </div>
 
                             <div className="form-control mt-6">
-                                <button type={"submit"} className="btn btn-primary enter-btn">Enter</button>
+                                <button type={"submit"} className="btn btn-primary enter-btn float-end">Enter</button>
                             </div>
-
-
                         </form>
                     </div>
                 </div>
             </div>
+
+            </div>
+
         </div>
+
     );
 
 }

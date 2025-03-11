@@ -32,4 +32,29 @@ public class TodoServiceImpl implements TodoService {
         log.info("user checking : {}", todoDao.selectUserDataByUsername(username) );
         return  todoDao.selectUserDataByUsername(username);
     }
+
+    @Override
+    public TodoDataDto addTodo(TodoDataDto todoPost) {
+        Long userNo = todoDao.selectUserNo(todoPost.getUsername());
+        TodoDataDto todoData = new TodoDataDto();
+        todoData.setTodoContent(todoPost.getTodoContent());
+        todoData.setTodoDelete("n");
+        todoData.setTodoSuccess("n");
+        todoData.setUserNo(userNo);
+
+        log.info("todoData : {}", todoData);
+
+        // 데이터 DB에 삽입
+        todoDao.insertTodo(todoData);
+
+        Long todoNo = todoData.getTodoNo();
+        log.info("todoNo : {}", todoNo);
+
+        return todoDao.selectInsertTodo(todoData.getTodoNo());
+    }
+
+    @Override
+    public void deleteTodo(Long todoNo) {
+        todoDao.deleteTodo(todoNo);
+    }
 }

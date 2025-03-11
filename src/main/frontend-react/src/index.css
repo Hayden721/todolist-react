@@ -1,8 +1,15 @@
-@config "./tailwind.config.js";
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: all;
+}
 
+
+
+/*// daisyui: {*/
+/*   //   themes: ["light", "dark"],*/
+/*   //   logs: true,*/
+/*   //*/
+/*   // },*/
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

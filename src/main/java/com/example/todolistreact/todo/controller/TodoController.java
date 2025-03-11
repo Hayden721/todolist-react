@@ -29,6 +29,22 @@ public class TodoController {
 
         return ResponseEntity.ok(todo);
     }
+    @PostMapping("/todo/add")
+    public ResponseEntity<?> todoAdd(@RequestBody TodoDataDto todoPost) {
+        log.info("todo content : {}, {} ", todoPost.getTodoContent(), todoPost.getUsername());
+
+        TodoDataDto todo = todoService.addTodo(todoPost);
+        return ResponseEntity.ok(todo);
+    }
+
+    @DeleteMapping("/todo/delete/{todoNo}")
+    public ResponseEntity<?> todoDelete(@PathVariable Long todoNo) {
+
+        log.info("del toodoNo : {}", todoNo);
+        todoService.deleteTodo(todoNo);
+
+        return ResponseEntity.ok().build();
+    }
 
     @PostMapping("/user-check")
     public ResponseEntity<Boolean> userCheck(@RequestBody Map<String, String> response) {

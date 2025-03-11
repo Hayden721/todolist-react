@@ -14,5 +14,6 @@ public class TodoDataDto {
     private String todoSuccess;
     private String todoDelete;
     private Long userNo;
+    private String username;
 
 }

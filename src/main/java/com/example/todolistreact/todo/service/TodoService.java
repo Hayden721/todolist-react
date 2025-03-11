@@ -8,4 +8,8 @@ public interface TodoService {
     List<TodoDataDto> getTodoData(String user);
 
     Boolean checkUserDataByUsername(String username);
+
+    TodoDataDto addTodo(TodoDataDto todoPost);
+
+    void deleteTodo(Long todoNo);
 }

@@ -13,4 +13,10 @@ public interface TodoDao {
     Boolean selectUserDataByUsername(String username);
 
     Long selectUserNo(String user);
+
+    void insertTodo(TodoDataDto todoData);
+
+    TodoDataDto selectInsertTodo(Long todoNo);
+
+    void deleteTodo(Long todoNo);
 }

@@ -5,9 +5,18 @@
 
 <mapper namespace="com.example.todolistreact.todo.dao.TodoDao">
 
+    <insert id="insertTodo" parameterType="com.example.todolistreact.todo.dto.TodoDataDto">
+        <selectKey keyProperty="todoNo" resultType="long" order="AFTER">
+            select seq_todo_no.currval from dual
+        </selectKey>
+        insert into todo_tb (todo_no, todo_content, todo_success, todo_delete, user_no)
+        values (seq_todo_no.nextval, #{todoContent}, #{todoSuccess}, #{todoDelete}, #{userNo})
+    </insert>
+
     <select id="selectTodoData" resultType="com.example.todolistreact.todo.dto.TodoDataDto">
         select * from todo_tb
         where user_no = #{userNo}
+        ORDER BY todo_no desc
     </select>
 
     <select id="selectUserDataByUsername" parameterType="String" resultType="Boolean">
@@ -19,6 +28,15 @@
         from user_tb
         where user_name = #{user}
     </select>
+    <select id="selectInsertTodo" resultType="com.example.todolistreact.todo.dto.TodoDataDto">
+        SELECT *
+        FROM todo_tb
+        WHERE todo_no = #{todoNo}
+    </select>
 
+    <delete id="deleteTodo">
+        DELETE FROM todo_tb
+        WHERE todo_no = #{todoNo}
+    </delete>
 
 </mapper>
