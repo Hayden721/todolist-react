@@ -12,4 +12,6 @@ public interface TodoService {
     TodoDataDto addTodo(TodoDataDto todoPost);
 
     void deleteTodo(Long todoNo);
+
+    void updateCompleteTodo(TodoDataDto todoNo);
 }

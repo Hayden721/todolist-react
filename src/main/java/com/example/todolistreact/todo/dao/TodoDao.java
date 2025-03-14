@@ -19,4 +19,6 @@ public interface TodoDao {
     TodoDataDto selectInsertTodo(Long todoNo);
 
     void deleteTodo(Long todoNo);
+
+    void updateCompleteTodo(Long todoNo);
 }

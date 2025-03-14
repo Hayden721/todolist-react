@@ -13,9 +13,18 @@
         values (seq_todo_no.nextval, #{todoContent}, #{todoSuccess}, #{todoDelete}, #{userNo})
     </insert>
 
+    <update id="updateCompleteTodo">
+        UPDATE todo_tb
+        SET
+        todo_success = 'y'
+        WHERE todo_no = #{todoNo}
+    </update>
+
     <select id="selectTodoData" resultType="com.example.todolistreact.todo.dto.TodoDataDto">
-        select * from todo_tb
-        where user_no = #{userNo}
+        select *
+        FROM todo_tb
+        WHERE user_no = #{userNo}
+            AND todo_success = 'n'
         ORDER BY todo_no desc
     </select>
 

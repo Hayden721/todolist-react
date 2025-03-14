@@ -46,6 +46,14 @@ public class TodoController {
         return ResponseEntity.ok().build();
     }
 
+    @PostMapping("/todo/complete")
+    public ResponseEntity<?> todoComplete(@RequestBody TodoDataDto todoNo) {
+        log.info("todoNo : {}", todoNo);
+
+        todoService.updateCompleteTodo(todoNo);
+        return ResponseEntity.ok().build();
+    }
+
     @PostMapping("/user-check")
     public ResponseEntity<Boolean> userCheck(@RequestBody Map<String, String> response) {
         log.info("responseUserData : {}", response);
@@ -57,4 +65,6 @@ public class TodoController {
 
     return ResponseEntity.ok(checkUser);
     }
+
+
 }
