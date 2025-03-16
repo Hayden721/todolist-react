@@ -9,6 +9,7 @@ const useThemeMode = (): useDark => {
     const isDark = useSelector(((state: RootState) => state.dark.isDark));
     const dispatch = useDispatch();
     useEffect(() => {
+        // isDark가 dark 값이라면 브라우저 localStorage에 "dark"로 기록
         if(isDark) {
             localStorage.theme === 'dark';
             document.documentElement.setAttribute("data-theme", "dark");
@@ -20,12 +21,9 @@ const useThemeMode = (): useDark => {
         }
     }, [isDark]);
 
-
     const onToggleThemeMode = (text: string): void => {
         dispatch(toggleThemeMode(text));
     };
-
-
 
     return [isDark, onToggleThemeMode];
 

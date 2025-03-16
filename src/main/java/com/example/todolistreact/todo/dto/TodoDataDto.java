@@ -9,11 +9,11 @@ import lombok.*;
 @AllArgsConstructor
 @ToString
 public class TodoDataDto {
-    private Long todoNo;
-    private String todoContent;
-    private String todoSuccess;
-    private String todoDelete;
-    private Long userNo;
-    private String username;
+    private Long todoNo; // todo 번호
+    private String todoContent; // todo 컨텐츠 내용
+    private String todoSuccess; // todo 성공 여부
+    private String todoDelete; // todo 삭제 여부
+    private Long userNo; // 작성한 유저 번호
+    private String username; // 유저 이름
 
 }

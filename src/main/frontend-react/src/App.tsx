@@ -9,6 +9,7 @@ function App() {
 
 
   return (
+      // BrowserRouter 사용
       <BrowserRouter>
           <Routes>
               {/* header need page */}

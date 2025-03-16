@@ -5,6 +5,7 @@ import axios from "../config/axios.ts";
 import {useDispatch} from "react-redux";
 import {setUsername} from "../redux/slices/loginUserInfoSlice.ts";
 
+// 로그인 페이지
 const Login: React.FC = () => {
 
     const [usernameValue, setUsernameValue] = useState<string>('');
@@ -16,10 +17,12 @@ const Login: React.FC = () => {
         e.preventDefault();
 
         try {
+            // 서버에서 브라우저에서 입력한 username과 DB에 저장되어 있는 username이 동일한지 확인
             const userCheck = await axios.post('/api/user-check', {usernameValue});
+            // 서버에서 확인한 값
             const checkResult = userCheck.data;
 
-            // console.log("유저 있나? : ", userCheck);
+            // 동일하면 /todo로 이동 아니라면 alert
             if(checkResult) {
                 navigate('/todo');
                 dispatch(setUsername(usernameValue));

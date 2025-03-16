@@ -1,5 +1,6 @@
 import ThemeModeToggle from "../ThemeModeToggle.tsx";
 
+// 헤더 메뉴
 const HeaderSideMenu = () => {
     return (
 
@@ -30,8 +31,6 @@ const HeaderSideMenu = () => {
             </div>
 
         </div>
-
-
     );
 
 };

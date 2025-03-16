@@ -62,4 +62,10 @@ public class TodoServiceImpl implements TodoService {
     public void updateCompleteTodo(TodoDataDto todoNo) {
         todoDao.updateCompleteTodo(todoNo.getTodoNo());
     }
+
+    @Override
+    public Boolean checkDuplicateUsername(TodoDataDto response) {
+
+        return null;
+    }
 }

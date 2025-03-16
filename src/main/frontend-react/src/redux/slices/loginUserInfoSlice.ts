@@ -9,7 +9,7 @@ const initialState: usernameState = {
     username: '',
 }
 
-
+// 유저가 로그인 하면 username을 reducer에 저장
 const loginUserInfoSlice = createSlice({
     name: "loginUserInfoSlice",
     initialState,

@@ -21,6 +21,7 @@ public class TodoController {
         this.todoService = todoService;
     }
 
+    // 유저가 작성 todo data
     @GetMapping("/todo")
     public ResponseEntity<List<TodoDataDto>> todoGet(@RequestParam String user) {
         log.info("/todo : {}", user);
@@ -29,6 +30,8 @@ public class TodoController {
 
         return ResponseEntity.ok(todo);
     }
+
+    // todo 추가
     @PostMapping("/todo/add")
     public ResponseEntity<?> todoAdd(@RequestBody TodoDataDto todoPost) {
         log.info("todo content : {}, {} ", todoPost.getTodoContent(), todoPost.getUsername());
@@ -37,6 +40,7 @@ public class TodoController {
         return ResponseEntity.ok(todo);
     }
 
+    // todo 삭제
     @DeleteMapping("/todo/delete/{todoNo}")
     public ResponseEntity<?> todoDelete(@PathVariable Long todoNo) {
 
@@ -46,6 +50,7 @@ public class TodoController {
         return ResponseEntity.ok().build();
     }
 
+    // todo 완료
     @PostMapping("/todo/complete")
     public ResponseEntity<?> todoComplete(@RequestBody TodoDataDto todoNo) {
         log.info("todoNo : {}", todoNo);
@@ -54,6 +59,7 @@ public class TodoController {
         return ResponseEntity.ok().build();
     }
 
+    // 유저 확인
     @PostMapping("/user-check")
     public ResponseEntity<Boolean> userCheck(@RequestBody Map<String, String> response) {
         log.info("responseUserData : {}", response);
@@ -63,8 +69,14 @@ public class TodoController {
         Boolean checkUser = todoService.checkUserDataByUsername(username);
         log.info("checkUser : {}", checkUser);
 
-    return ResponseEntity.ok(checkUser);
+        return ResponseEntity.ok(checkUser);
     }
 
+    @PostMapping("/user/register")
+    public ResponseEntity<?> userRegister(@RequestBody TodoDataDto response) {
+//        Boolean isDuplicate = todoService.checkDuplicateUsername(response);
+        log.info("responseUserData : {}", response);
+        return ResponseEntity.ok().build();
+    }
 
 }

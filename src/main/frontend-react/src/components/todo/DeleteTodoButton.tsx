@@ -1,7 +1,7 @@
 import React from "react";
 import {DeleteTodoProps} from "../../types.ts";
 
-
+// todo 삭제 버튼
 const DeleteTodoButton: React.FC<DeleteTodoProps> = ({todoData, deleteTodoFunc}) => {
 
     return (

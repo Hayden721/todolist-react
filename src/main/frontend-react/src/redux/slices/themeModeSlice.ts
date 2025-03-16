@@ -4,7 +4,6 @@ interface DarkModeState {
     isDark: boolean;
 }
 
-
 const initialState: DarkModeState = {
     isDark:
         localStorage.theme === "dark" ||
