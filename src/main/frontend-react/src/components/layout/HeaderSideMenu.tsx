@@ -1,7 +1,18 @@
 import ThemeModeToggle from "../ThemeModeToggle.tsx";
+import {useDispatch} from "react-redux";
+import {useNavigate} from "react-router-dom";
+import {clearUsername} from "../../redux/slices/loginUserInfoSlice.ts";
 
 // 헤더 메뉴
 const HeaderSideMenu = () => {
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
+        dispatch(clearUsername());
+        navigate('/');
+    }
+
     return (
 
         <div className="navbar shadow-sm">
@@ -17,9 +28,7 @@ const HeaderSideMenu = () => {
                     <ul
                         tabIndex={0}
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                        <li><a>Homepage</a></li>
-                        <li><a>Portfolio</a></li>
-                        <li><a>About</a></li>
+                        <li><a onClick={handleLogout}>Logout</a></li>
                     </ul>
                 </div>
             </div>

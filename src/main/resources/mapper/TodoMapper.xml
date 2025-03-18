@@ -12,6 +12,10 @@
         insert into todo_tb (todo_no, todo_content, todo_success, todo_delete, user_no)
         values (seq_todo_no.nextval, #{todoContent}, #{todoSuccess}, #{todoDelete}, #{userNo})
     </insert>
+    <insert id="insertUser">
+        INSERT INTO user_tb(user_no, user_name)
+        values (user_seq.nextval, #{username})
+    </insert>
 
     <update id="updateCompleteTodo">
         UPDATE todo_tb
@@ -27,10 +31,10 @@
             AND todo_success = 'n'
         ORDER BY todo_no desc
     </select>
-
     <select id="selectUserDataByUsername" parameterType="String" resultType="Boolean">
-        select count(*) from user_tb
-        where user_name = #{username}
+        SELECT count(*)
+        FROM user_tb
+        WHERE user_name = #{username}
     </select>
     <select id="selectUserNo" resultType="java.lang.Long">
         select user_no
@@ -41,6 +45,11 @@
         SELECT *
         FROM todo_tb
         WHERE todo_no = #{todoNo}
+    </select>
+    <select id="selectDuplicateUsername" resultType="boolean">
+        SELECT count(user_name)
+        FROM user_tb
+        where user_name = #{username}
     </select>
 
     <delete id="deleteTodo">

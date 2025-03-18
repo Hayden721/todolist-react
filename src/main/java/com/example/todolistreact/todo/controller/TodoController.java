@@ -72,10 +72,18 @@ public class TodoController {
         return ResponseEntity.ok(checkUser);
     }
 
+    @PostMapping("/user/name/duplicate")
+    public ResponseEntity<Boolean> userIdDuplicate(@RequestBody TodoDataDto response) {
+        Boolean isDuplicate = todoService.checkDuplicateUsername(response);
+        log.info("isDuplicate : {}", isDuplicate);
+        return ResponseEntity.ok(isDuplicate);
+    }
+
     @PostMapping("/user/register")
     public ResponseEntity<?> userRegister(@RequestBody TodoDataDto response) {
-//        Boolean isDuplicate = todoService.checkDuplicateUsername(response);
-        log.info("responseUserData : {}", response);
+
+        todoService.registerUser(response);
+
         return ResponseEntity.ok().build();
     }
 

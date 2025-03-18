@@ -65,7 +65,14 @@ public class TodoServiceImpl implements TodoService {
 
     @Override
     public Boolean checkDuplicateUsername(TodoDataDto response) {
+        return todoDao.selectDuplicateUsername(response.getUsername());
+    }
 
-        return null;
+    @Override
+    public void registerUser(TodoDataDto response) {
+        boolean isDuplicate = todoDao.selectDuplicateUsername(response.getUsername());
+        if(!isDuplicate){
+            todoDao.insertUser(response.getUsername());
+        }
     }
 }

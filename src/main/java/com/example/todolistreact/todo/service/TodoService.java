@@ -26,4 +26,6 @@ public interface TodoService {
     void updateCompleteTodo(TodoDataDto todoNo);
 
     Boolean checkDuplicateUsername(TodoDataDto response);
+
+    void registerUser(TodoDataDto response);
 }

@@ -12,7 +12,7 @@ const persistConfig = {
 }
 
 const rootReducers = combineReducers({
-    username: loginUserInfoSlice.reducer,
+    name: loginUserInfoSlice.reducer,
     dark: themeModeSlice.reducer
 })
 

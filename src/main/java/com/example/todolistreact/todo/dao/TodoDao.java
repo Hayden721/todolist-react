@@ -21,4 +21,8 @@ public interface TodoDao {
     void deleteTodo(Long todoNo);
 
     void updateCompleteTodo(Long todoNo);
+
+    boolean selectDuplicateUsername(String username);
+
+    void insertUser(String username);
 }
