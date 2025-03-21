@@ -71,14 +71,14 @@ public class TodoController {
 
         return ResponseEntity.ok(checkUser);
     }
-
+    // 유저 아이디 중복 확인
     @PostMapping("/user/name/duplicate")
     public ResponseEntity<Boolean> userIdDuplicate(@RequestBody TodoDataDto response) {
         Boolean isDuplicate = todoService.checkDuplicateUsername(response);
         log.info("isDuplicate : {}", isDuplicate);
         return ResponseEntity.ok(isDuplicate);
     }
-
+    // 회원가입
     @PostMapping("/user/register")
     public ResponseEntity<?> userRegister(@RequestBody TodoDataDto response) {
 

@@ -12,16 +12,12 @@ const Todo = () => {
     const [newTodo, setNewTodo] = useState<string>("");
     const navigate = useNavigate();
     const user = useSelector((state: RootState) => state.name.username);
-    console.log("user : ",user);
-
 
     useEffect(() => {
         if(user === "") {
             navigate('/');
         }
     }, [user, navigate]);
-
-
 
     return (
         <div className="flex flex-col items-center w-full h-full">

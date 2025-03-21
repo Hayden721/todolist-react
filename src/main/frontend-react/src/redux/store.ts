@@ -28,7 +28,6 @@ const store = configureStore({
 
 export const persistor = persistStore(store);
 
-
 export default store;
 
 // RootState와 AppDispatch 타입 추론

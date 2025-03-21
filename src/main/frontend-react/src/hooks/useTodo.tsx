@@ -11,7 +11,6 @@ const useTodo = () => {
     const user = useSelector((state: RootState) => state.name); // 유저 이름값 가져오기
     const [todos, setTodos] = useState<TodoProps[]>([]); // 사용자가 작성한 todo 값 배열로 가져오기
 
-
     // todo에 기능이 발생할 때 마다 실행된다.
     useEffect(() => {
         axios
