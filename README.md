@@ -1,32 +1,43 @@
 # 소개
-사용자가 일정을 효율적으로 관리할 수 있도록 도와주는 Todo List 웹 애플리케이션입니다.
+이 프로젝트는 사용자가 할 일을 등록하고 관리할 수 있는 간단한 Todo List 웹 애플리케이션입니다.  
+React를 기반으로 직관적인 UI를 제공하며, Spring Boot와 REST API를 활용하여 백엔드와 데이터를 주고받습니다.  
+Oracle Cloud Infrastructure(OCI)의 컴퓨트 인스턴스에서 Nginx를 활용한 **프론트/백엔드 배포 경험**까지 포함된 프로젝트입니다.
 
 # ⚙️ 개발 환경
-### Front-end
-<img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=white"> <img src="https://img.shields.io/badge/Redux--toolkit-764ABC?style=for-the-badge&logo=Redux&logoColor=white"> <img src="https://img.shields.io/badge/tailwindcss-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white">
+### 💻 Frontend
+- React
+- JavaScript
+- Redux-toolkit
 
-### Back-end
-<img src="https://img.shields.io/badge/springboot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white">
+### 🛠 Backend
+- Spring Boot
+- Java
 
-### DB
-<img src="https://img.shields.io/badge/Oracle-FF0000?style=for-the-badge&logo=Oracle&logoColor=white">
+### Database
+- OCI(Oracle Database)
 
 ### Cloud
 <img src="https://img.shields.io/badge/OracleCloud-FF0000?style=for-the-badge&logo=OracleCloud&logoColor=white">
 
-# 📌 기능
-회원 관리
-- 회원 등록
+## 🚀 주요 기능
+
+### 회원 관리
+- 회원가입
 - 로그인
 
- todo
-- todo 등록
-- todo 삭제
-- todo 완료
+### Todo 관리
+- Todo 등록
+- Todo 삭제
+- Todo 완료 표시
 
-테마 설정
-- 다크 모드
+### 테마 설정
+- 다크 모드 지원
 
-# 📃 결과 및 성과
-1. Oracle Cloud를 활용하여 Spring Boot 애플리케이션을 배포해보며 클라우드 환경에서의 배포 프로세스를 경험할 수 있었습니다.
-2. React와 Spring Boot 간의 데이터 통신을 구현하면서 CORS 설정과 REST API 통신 구조에 대한 이해를 높일 수 있었습니다.
+## 📃 결과 및 성과
+- **Oracle Cloud 컴퓨트 인스턴스**에 Nginx를 설정하여 React 프론트엔드와 Spring Boot 백엔드 애플리케이션을 배포
+- React와 Spring Boot 간의 **CORS 설정 및 REST API 통신 구조**에 대한 실전 이해도 향상
+- **클라우드 환경에서 통합 및 배포 경험**을 쌓음
+- **배포 과정**: https://velog.io/@hayden0721/OCI-%EC%98%A4%EB%9D%BC%ED%81%B4-%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C-%EB%B0%B0%ED%8F%AC1-Spring-Boot-ReactNginx
+
+## 👨‍💻 개발자
+1인 개발 (프론트엔드, 백엔드, 배포 포함 전 과정)
