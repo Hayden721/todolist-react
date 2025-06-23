@@ -17,7 +17,7 @@ Oracle Cloud Infrastructure(OCI)의 컴퓨트 인스턴스에서 Nginx를 활용
 - OCI(Oracle Database)
 
 ### Cloud
-<img src="https://img.shields.io/badge/OracleCloud-FF0000?style=for-the-badge&logo=OracleCloud&logoColor=white">
+- Oracle Cloud
 
 ## 🚀 주요 기능
 
